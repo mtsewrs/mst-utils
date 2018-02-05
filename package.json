@@ -2,6 +2,7 @@
   "name": "mst-utils",
   "version": "0.1.3",
   "author": "https://github.com/mattiasewers",
+  "repository": "https://github.com/mattiasewers/mst-utils",
   "main": "dist/mst-utils.umd.js",
   "module": "dist/mst-utils.es5.js",
   "dependencies": {
