@@ -5,7 +5,7 @@ Collection of utilities to help you use mst for server side rendering and more.
 # Features
 
 * Server and client hydration
-* dispatch actions
+* dispatch mobx-state-tree actions
 
 # Installation
 
@@ -23,9 +23,9 @@ npm install mst-utils
 
 ```js
 import { store } from 'mst-utils';
-import mymodel from './stores/mymodel';
+import counter from './stores/counter';
 
-export default store.setup({ mymodel });
+export default store.setup({ counter });
 ```
 
 ## Initialize stores
@@ -39,7 +39,7 @@ Dehydrate your state on the server
 ```js
 import { dehydrate } from 'mst-utils';
 
-window.__STATE = hydrate();
+window.__STATE = JSON.stringify(hydrate());
 ```
 
 ## Rehydrate
@@ -52,16 +52,12 @@ import { rehydrate } from 'mst-utils';
 rehydrate();
 ```
 
-## Rehydrate
+## Dispatch
 
 Dispatch any function from your mst models in the store.
 
 ```js
 import { dispatch } from 'mst-utils';
 
-dispatch('todos.addTodo', 'My todo');
+dispatch('counter.increment');
 ```
-
-# Credit
-
-Thanks to [Claudio Savino](https://github.com/foxhound87) for `rfx-core` which inspired me to create `mst-utils`.
