@@ -39,7 +39,10 @@ Dehydrate your state on the server
 ```js
 import { dehydrate } from 'mst-utils';
 
-window.__STATE = JSON.stringify(hydrate());
+const state = hydrate();
+
+// Do something with state
+window.__STATE = state
 ```
 
 ## Rehydrate
